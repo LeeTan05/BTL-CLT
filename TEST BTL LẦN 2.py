@@ -16,7 +16,7 @@ for i in range(num_nodes):
         matrix_A[2 * i][bar - 1] = np.cos(np.radians(angles[j]))
         matrix_A[2 * i + 1][bar - 1] = np.sin(np.radians(angles[j]))
 
-    link_type = input(f"Liên kết tại nút {i + 1} (cố định, di động, hoặc tự do): ").strip().lower()
+    link_type = input(f"Liên kết tại nút {i + 1} (cố định, di động, hoặc tự do): ").lower()
 
     if link_type == "cố định":
         matrix_A[2 * i][num_bars + i] = 1
