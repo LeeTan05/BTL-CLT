@@ -9,14 +9,14 @@ vector_b = np.zeros(2 * num_nodes)
 for i in range(num_nodes):
     print(f"\nNhập thông tin cho nút {i + 1}:")
 
-    bars = list(map(int, input(f"Nhập các thanh liên kết với nút {i + 1} (cách nhau bởi dấu cách): ").split()))
-    angles = list(map(float, input(f"Nhập góc cách thanh của các nút này (cách nhau bởi dấu cách): ").split()))
+    bars = list(map(int, input(f"Nhập các thanh liên kết với nút {i + 1} : ").split()))
+    angles = list(map(float, input(f"Nhập góc cách thanh của các nút này : ").split()))
 
     for j, bar in enumerate(bars):
         matrix_A[2 * i][bar - 1] = np.cos(np.radians(angles[j]))
         matrix_A[2 * i + 1][bar - 1] = np.sin(np.radians(angles[j]))
 
-    link_type = input(f"Liên kết tại nút {i + 1} (cố định, di động, hoặc tự do): ").lower()
+    link_type = input(f"Liên kết tại nút {i + 1} (cố định, di động, hoặc tự do): ")
 
     if link_type == "cố định":
         matrix_A[2 * i][num_bars + i] = 1
